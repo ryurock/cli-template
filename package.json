@@ -6,12 +6,17 @@
   "description": "",
   "main": "index.js",
   "devDependencies": {
-    "@types/chalk": "^2.2.0",
     "@types/node": "^20.11.30",
+    "pkg": "^5.8.1",
+    "rollup": "^4.13.0",
     "typescript": "^5.4.3"
   },
   "scripts": {
+    "build": "tsc",
     "build:watch": "tsc --watch",
+    "rollup": "rollup --config=rollup.config.js",
+    "package:all": "npm run build && npm run rollup && npm run package:macos:arm64",
+    "package:macos:arm64": "pkg dist/bundle.js --target node18-macos-arm64 --output build/bin/cli",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,8 +31,18 @@
   },
   "homepage": "https://github.com/ryurock/cli-template#readme",
   "dependencies": {
-    "@commander-js/extra-typings": "^12.0.1",
-    "chalk": "^5.3.0",
-    "commander": "^12.0.0"
+    "commander": "^12.0.0",
+    "picocolors": "^1.0.0"
+  },
+  "pkg": {
+    "scripts": [
+      "package.json"
+    ],
+    "assets": [],
+    "targets": [
+      "node18",
+      "linux-arm64",
+      "macos-arm64"
+    ]
   }
 }

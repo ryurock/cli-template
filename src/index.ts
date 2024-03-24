@@ -1,17 +1,14 @@
-import { Command } from '@commander-js/extra-typings';
-import chalk from 'chalk';
-import { createRequire } from 'node:module'
-const require = createRequire(import.meta.url);
-
-const packageJson = require('../package.json')
+import { Command } from 'commander';
+import pc from "picocolors"
 
 const program = new Command();
 
 program
   .name('cli')
-  .description(chalk.green('CLI Template'))
+  // .description('CLI Template')
+  .description(pc.green('CLI Template'))
 
-program.version(packageJson.version, '-v, --version', 'output the current version');
+program.version('0.0.1', '-v, --version', 'output the current version');
 
 program.command('split')
   .description('Split a string into substrings and display as an array')
