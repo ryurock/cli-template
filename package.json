@@ -1,0 +1,33 @@
+{
+  "name": "cli-template",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/node": "^20.11.30",
+    "typescript": "^5.4.3"
+  },
+  "scripts": {
+    "build:watch": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryurock/cli-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryurock/cli-template/issues"
+  },
+  "homepage": "https://github.com/ryurock/cli-template#readme",
+  "dependencies": {
+    "@commander-js/extra-typings": "^12.0.1",
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0"
+  }
+}
